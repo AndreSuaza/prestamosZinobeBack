@@ -9,13 +9,16 @@ const app = express();
 //Configurar Cors
 app.use(cors());
 
+//Lectura Body
+app.use( express.json() );
+
 //Base de datos
 dbConnection();
 
 //Runtas
-app.get( '/', (req, res) => {
-    res.json({ ok:true, msg: 'hola mundo' })
-});
+app.use('/api/users', require('./routes/users'));
+
+
 
 app.listen( process.env.PORT, () => {
     console.log('Servidor corriendo 2');
