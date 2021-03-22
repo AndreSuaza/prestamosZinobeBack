@@ -17,6 +17,7 @@ dbConnection();
 
 //Runtas
 app.use('/api/users', require('./routes/users'));
+app.use('/api/requests', require('./routes/requests'));
 
 
 

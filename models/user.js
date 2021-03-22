@@ -1,4 +1,4 @@
-const { Schema, Model, model } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const UserSchema = Schema({
 
@@ -17,7 +17,7 @@ const UserSchema = Schema({
     },
     valido: {
         type: Boolean,
-        default: true
+        default: null
     }
 
 });

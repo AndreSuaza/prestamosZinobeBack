@@ -11,6 +11,16 @@ const getUsers = async (req, res) => {
     })
 }
 
+const getUserByEmail = async (req, res) => {
+
+    const correo = req.params.email;
+    const user = await User.findOne({ correo: correo })
+
+    res.json({ 
+        ok:true, 
+        user
+    })
+}
 
 const createUsers = async (req, res = response) => {
 
@@ -50,4 +60,5 @@ const createUsers = async (req, res = response) => {
 module.exports = {
     getUsers,
     createUsers,
+    getUserByEmail,
 }
